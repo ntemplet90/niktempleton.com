@@ -1,0 +1,103 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+header h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+header p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Grid container */
+main.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem 3rem;
+  flex-grow: 1;
+}
+
+/* Pillar card */
+.pillar {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pillar img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.pillar .overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effects */
+.pillar:hover,
+.pillar:focus {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+.pillar:hover img,
+.pillar:focus img {
+  transform: scale(1.15);
+}
+.pillar:hover .overlay,
+.pillar:focus .overlay {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  .pillar img {
+    height: 180px;
+  }
+}
